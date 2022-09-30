@@ -13,68 +13,68 @@ CREATE TABLE `Position` (
     PositionName ENUM('Dev', 'Test', 'Scrum Master', 'PM') NOT NULL UNIQUE KEY
 );
 -- ENUM dùng để chọn với số ít các dữ liệu
-
+DROP TABLE IF EXISTS account;
 CREATE TABLE `Account` (
     AccountID TINYINT AUTO_INCREMENT PRIMARY KEY,
-    Email VARCHAR(50) UNIQUE KEY,
-    Username VARCHAR(50),
-    Fullname VARCHAR(50),
-    DepartmentID TINYINT UNSIGNED,
-    PositionID TINYINT UNSIGNED,
-    CreateDate DATE
+    Email VARCHAR(50) NOT NULL UNIQUE KEY,
+    Username VARCHAR(50) NOT NULL UNIQUE KEY,
+    Fullname VARCHAR(50) NOT NULL,
+    DepartmentID TINYINT UNSIGNED NOT NULL,
+    PositionID TINYINT UNSIGNED NOT NULL,
+    CreateDate DATETIME DEFAULT NOW()
 );
 
 CREATE TABLE `Group` (
     GroupID TINYINT AUTO_INCREMENT PRIMARY KEY,
-    GroupName VARCHAR(20),
-    CreatorID TINYINT,
-    CreateDate DATE
+    GroupName VARCHAR(20) NOT NULL UNIQUE KEY,
+    CreatorID TINYINT NOT NULL,
+    CreateDate DATETIME DEFAULT NOW()
 );
 
 CREATE TABLE `GroupAccount` (
-    GroupID TINYINT,
-    AccountID TINYINT,
-    JoinDate DATE
+    GroupID TINYINT NOT NULL,
+    AccountID TINYINT NOT NULL,
+    JoinDate DATETIME DEFAULT CURRENT_TIMESTAMP()
 );
 
 CREATE TABLE `TypeQuestion` (
     TypeID TINYINT AUTO_INCREMENT PRIMARY KEY,
-    TypeName ENUM('Essay','Multiple-Choice') NOT NULL 
+    TypeName ENUM('Essay','Multiple-Choice') NOT NULL UNIQUE KEY
 );
 
 CREATE TABLE `CategoryQuestion` (
     CategoryID TINYINT AUTO_INCREMENT PRIMARY KEY,
-    CategoryName VARCHAR(20)
+    CategoryName VARCHAR(20) NOT NULL UNIQUE KEY
 );
 
 CREATE TABLE `Question` (
     QuestionID TINYINT AUTO_INCREMENT PRIMARY KEY,
-    Content TEXT,
-    CategoryID TINYINT,
-    TypeID TINYINT,
-    CreatorID TINYINT,
-    CreateDate DATE
+    Content TEXT NOT NULL,
+    CategoryID TINYINT NOT NULL,
+    TypeID TINYINT NOT NULL,
+    CreatorID TINYINT NOT NULL,
+    CreateDate DATETIME DEFAULT NOW()
 );
 CREATE TABLE `Answer` (
     AnswerID TINYINT AUTO_INCREMENT PRIMARY KEY,
-    Content TEXT,
-    QuestionID TINYINT,
-    isCorrect BOOLEAN
+    Content TEXT NOT NULL,
+    QuestionID TINYINT NOT NULL,
+    isCorrect BOOLEAN 
 );
 
 CREATE TABLE `Exam` (
     ExamID TINYINT AUTO_INCREMENT PRIMARY KEY,
-    `Code` VARCHAR(10),
-    Title VARCHAR(50),
-    CategoryID TINYINT,
-    Duration TIME,
-    CreatorID TINYINT,
-    CreateDate DATE
+    `Code` VARCHAR(10) NOT NULL,
+    Title VARCHAR(50) NOT NULL,
+    CategoryID TINYINT NOT NULL,
+    Duration TIME NOT NULL,
+    CreatorID TINYINT NOT NULL,
+    CreateDate DATETIME DEFAULT NOW()
 );
 
 CREATE TABLE `ExamQuestion` (
-    ExamID TINYINT,
-    QuestionID TINYINT
+    ExamID TINYINT NOT NULL,
+    QuestionID TINYINT NOT NULL
 );
 
 -- Them khoa phu
