@@ -89,7 +89,7 @@ ALTER TABLE `ExamQuestion` ADD FOREIGN KEY(ExamID) REFERENCES `Exam`(ExamID);
 ALTER TABLE `ExamQuestion` ADD FOREIGN KEY(QuestionID) REFERENCES `Question`(QuestionID);
 
 -- Them du lieu vao bang
-INSERT INTO `Department`(DepartmentID,DepartmentName) VALUES 
+INSERT INTO `Department` VALUES 
 	(1,'Marketing'),
     (2,'Sale'),
 	(3,'Team Leader'),
