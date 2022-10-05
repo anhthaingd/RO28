@@ -87,6 +87,9 @@ ALTER TABLE `Answer` ADD FOREIGN KEY (QuestionID) REFERENCES `Question`(Question
 ALTER TABLE `Exam` ADD FOREIGN KEY (CategoryID) REFERENCES `categoryquestion` (CategoryID);
 ALTER TABLE `ExamQuestion` ADD FOREIGN KEY(ExamID) REFERENCES `Exam`(ExamID);
 ALTER TABLE `ExamQuestion` ADD FOREIGN KEY(QuestionID) REFERENCES `Question`(QuestionID);
+ALTER TABLE `group` ADD FOREIGN KEY(CreatorID) REFERENCES `account`(AccountID);
+ALTER TABLE `question` ADD FOREIGN KEY(CreatorID) REFERENCES `account`(AccountID);
+ALTER TABLE `exam` ADD FOREIGN KEY(CreatorID) REFERENCES `account`(AccountID);
 
 -- Them du lieu vao bang
 INSERT INTO `Department` VALUES 
@@ -111,7 +114,7 @@ INSERT INTO `Account` VALUES
 	(1,'user1@gmail.com','username1','fullname1','1','3','2022-09-01'),
     (2,'user2@gmail.com','username2','fullname2','1','2','2022-08-10'),
     (3,'user3@gmail.com','username3','fullname3','2','1','2022-07-10'),
-    (4,'user4@gmail.com','username4','fullname4','4','4','2022-08-10'),
+    (4,'user4@gmail.com','username4','fullname4','1','4','2022-08-10'),
     (5,'user5@gmail.com','username5','fullname5','3','3','2022-08-10'),
     (6,'user6@gmail.com','username6','fullname6','5','2','2022-08-10'),
     (7,'user7@gmail.com','username7','fullname7','6','1','2022-08-10'),
@@ -120,7 +123,8 @@ INSERT INTO `Account` VALUES
     (10,'user10@gmail.com','username10','fullname10','8','3','2022-08-10'),
     (11,'user11@gmail.com','username11','fullname11','9','1','2022-08-10'),
     (12,'user12@gmail.com','username12','fullname12','10','2','2022-08-10'),
-    (13,'user13@gmail.com','username13','fullname13','7','1','2022-08-10');
+    (13,'user13@gmail.com','username13','fullname13','7','1','2022-08-10'),
+    (17,'user17@gmail.com','username17','Doctor Buffalo','1','3','2022-09-01');
     
 INSERT INTO `Group` VALUES 
 	(1,'GroupName1',1,'2022-09-01'),
@@ -138,7 +142,11 @@ INSERT INTO `GroupAccount` VALUES
 	(1,'1','2022-09-03'),
     (1,'2','2022-09-03'),
     (1,'5','2022-09-03'),
+	(1,'6','2022-09-03'),
+	(1,'7','2022-09-03'),
+	(1,'8','2022-09-03'),
     (2,'4','2022-09-03'),
+    (2,'2','2022-09-03'),
     (2,'3','2022-09-03'),
     (3,'6','2022-09-03'),
     (4,'7','2022-09-03'),
@@ -146,7 +154,6 @@ INSERT INTO `GroupAccount` VALUES
     (6,'3','2022-09-03'),
     (7,'10','2022-09-03'),
     (8,'11','2022-09-03'),
-    (9,'12','2022-09-03'),
     (10,'13','2022-09-03');
     
 INSERT INTO `TypeQuestion` VALUES 
@@ -186,7 +193,8 @@ INSERT INTO `Answer` VALUES
     (6,'content6',6,True),
     (7,'content7',7,True),
     (8,'content8',8,FALSE),
-    (9,'content9',9,True),
+    (11,'content11',10,True),
+    (12,'content12',10,True),
     (10,'content10',10,True);
     
 INSERT INTO `Exam` VALUES
@@ -213,7 +221,7 @@ INSERT INTO `ExamQuestion` VALUES
     (3,8),
     (4,2),
     (5,5),
-    (6,9),
+    (6,6),
     (7,10),
     (7,7);
     

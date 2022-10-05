@@ -18,6 +18,7 @@ FROM
 WHERE
     DepartmentName = 'Sale';
     
+
     
 -- Question 4
     
@@ -45,6 +46,8 @@ WHERE
         WHERE
             DepartmentID = 3);
 
+with cte_dep3 as (select * from account where DepartmentID=3)
+select * from cte_dep3 where length(Fullname) = (select max(length(Fullname) )from cte_dep3) order by Fullname;
 -- Question 6
 
 SELECT GroupName FROM `group` WHERE CreateDate <='2020-12-20';
@@ -91,8 +94,6 @@ WHERE
     
 -- Question 11
 
-INSERT INTO `Account` VALUES 
-	(17,'user17@gmail.com','username17','Doctor Buffalo','1','3','2022-09-01');
     
 SELECT 
     *
