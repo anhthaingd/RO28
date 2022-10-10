@@ -102,8 +102,8 @@ INSERT INTO `Department` VALUES
     (7,'Trainee'),
     (8,'Supervios'),
     (9,'Officer'),
-    (10,'Expert');
-    
+    (10,'Expert'),
+    (11,' ');
 INSERT INTO `Position` (PositionName) VALUES
 	('Dev'), 
     ('Test'),
@@ -177,11 +177,11 @@ INSERT INTO `Question` VALUES
 
 Not every topic or idea should be thousands of words. Making something thorough for thorough’s sake can make a piece feel fluffy. Yes, you can write comprehensively about a topic like cars and cover everything from maintenance to reselling to history to the cultural significance. But why? Why are you including all of that? Is that the most effective way to communicate the information to your audience?',1,1,2,'2022-10-01'),
     (2,'content2',2,2,1,'2022-10-01'),
-    (3,'content3',1,2,3,'2022-10-01'),
-    (4,'content4',3,1,4,'2022-10-01'),
+    (3,'content3',1,2,3,'2017-10-01'),
+    (4,'content4',3,1,4,'2022-08-01'),
     (5,'content5',5,1,5,'2022-10-01'),
-    (6,'content6',6,2,6,'2022-10-01'),
-    (7,'content7',4,2,7,'2022-10-01'),
+    (6,'content6',6,2,6,'2022-09-01'),
+    (7,'content7312',4,2,7,'2022-10-01'),
     (8,'content8',7,1,1,'2022-10-01'),
     (9,'content9',8,1,10,'2022-10-01'),
     (10,'content10',5,1,12,'2022-10-01');
@@ -202,12 +202,12 @@ INSERT INTO `Answer` VALUES
 INSERT INTO `Exam` VALUES
 	(1,'code1','title1',1,'01:00:00',1,'2022-11-01'),
     (2,'code2','title2',2,'01:00:00',5,'2022-11-01'),
-    (3,'code3','title3',3,'01:00:00',3,'2022-11-01'),
+    (3,'code3','title3',3,'01:00:00',3,'2014-11-01'),
     (4,'code4','title4',1,'01:00:00',2,'2022-11-01'),
     (5,'code5','title5',2,'01:00:00',1,'2022-11-01'),
-    (6,'code6','title6',5,'01:00:00',5,'2022-11-01'),
-    (7,'code7','title7',6,'01:00:00',6,'2022-11-01'),
-    (8,'code8','title8',8,'01:00:00',7,'2022-11-01'),
+    (6,'code6','title6',5,'01:00:00',5,'2019-11-01'),
+    (7,'code7','title7',6,'01:00:00',6,'2018-11-01'),
+    (8,'code8','title8',8,'01:00:00',7,'2017-10-01'),
     (9,'code9','title9',9,'01:00:00',9,'2022-11-01'),
     (10,'code10','title10',4,'01:00:00',4,'2022-11-01');
     
