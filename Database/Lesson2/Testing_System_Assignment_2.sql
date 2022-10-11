@@ -67,7 +67,7 @@ CREATE TABLE `Exam` (
     `Code` VARCHAR(10) NOT NULL,
     Title VARCHAR(50) NOT NULL,
     CategoryID TINYINT NOT NULL,
-    Duration TIME NOT NULL,
+    Duration TINYINT UNSIGNED NOT NULL,
     CreatorID TINYINT NOT NULL,
     CreateDate DATETIME DEFAULT NOW()
 );
@@ -103,7 +103,7 @@ INSERT INTO `Department` VALUES
     (8,'Supervios'),
     (9,'Officer'),
     (10,'Expert'),
-    (11,' ');
+    (11,'Waiting Department');
 INSERT INTO `Position` (PositionName) VALUES
 	('Dev'), 
     ('Test'),
@@ -124,6 +124,7 @@ INSERT INTO `Account` VALUES
     (11,'user11@gmail.com','username11','fullname11','9','1','2022-08-10'),
     (12,'user12@gmail.com','username12','fullname12','10','2','2022-08-10'),
     (13,'user13@gmail.com','username13','fullname13','7','1','2022-08-10'),
+	(18,'admin@gmail.com','admin','Admin','1','3','2022-09-01'),
     (17,'user17@gmail.com','username17','Doctor Buffalo','1','3','2022-09-01');
     
 INSERT INTO `Group` VALUES 
@@ -197,19 +198,19 @@ INSERT INTO `Answer` VALUES
     (8,'content8',8,FALSE),
     (11,'content11',10,True),
     (12,'content12',10,True),
-    (10,'content10',10,True);
+    (10,'content10',8,True);
     
 INSERT INTO `Exam` VALUES
-	(1,'code1','title1',1,'01:00:00',1,'2022-11-01'),
-    (2,'code2','title2',2,'01:00:00',5,'2022-11-01'),
-    (3,'code3','title3',3,'01:00:00',3,'2014-11-01'),
-    (4,'code4','title4',1,'01:00:00',2,'2022-11-01'),
-    (5,'code5','title5',2,'01:00:00',1,'2022-11-01'),
-    (6,'code6','title6',5,'01:00:00',5,'2019-11-01'),
-    (7,'code7','title7',6,'01:00:00',6,'2018-11-01'),
-    (8,'code8','title8',8,'01:00:00',7,'2017-10-01'),
-    (9,'code9','title9',9,'01:00:00',9,'2022-11-01'),
-    (10,'code10','title10',4,'01:00:00',4,'2022-11-01');
+	(1,'code1','title1',1,'15',1,'2022-10-10'),
+    (2,'code2','title2',2,'30',5,'2022-11-01'),
+    (3,'code3','title3',3,'45',3,'2014-11-01'),
+    (4,'code4','title4',1,'90',2,'2022-11-01'),
+    (5,'code5','title5',2,'30',1,'2022-11-01'),
+    (6,'code6','title6',5,'15',5,'2019-11-01'),
+    (7,'code7','title7',6,'30',6,'2018-11-01'),
+    (8,'code8','title8',8,'45',7,'2017-10-01'),
+    (9,'code9','title9',9,'20',9,'2022-11-01'),
+    (10,'code10','title10',4,'15',4,'2022-11-01');
     
 INSERT INTO `ExamQuestion` VALUES
 	(1,2),

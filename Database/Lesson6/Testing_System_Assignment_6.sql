@@ -332,10 +332,24 @@ UNION
 SELECT MONTH(date_sub(NOW(),INTERVAL 0 MONTH)) AS `MONTH`, YEAR(date_sub(NOW(),INTERVAL 0 MONTH)) AS `YEAR`
 )
 
-SELECT C.`MONTH`,C.`YEAR`,CASE 
-WHEN count(QuestionID) = 0 THEN 'No Question'
-ELSE count(QuestionID) END AS SL FROM `cte_q13` C LEFT JOIN (SELECT * FROM `question`  WHERE CreateDate >= DATE_SUB(NOW(),INTERVAL 6 MONTH) AND 
-CreateDate <= NOW()) AS Sub_Question ON C.MONTH = MONTH(CreateDate) GROUP BY C.MONTH
+SELECT 
+    C.`MONTH`,
+    C.`YEAR`,
+    CASE
+        WHEN COUNT(QuestionID) = 0 THEN 'No Question'
+        ELSE COUNT(QuestionID)
+    END AS SL
+FROM
+    `cte_q13` C
+        LEFT JOIN
+    (SELECT 
+        *
+    FROM
+        `question`
+    WHERE
+        CreateDate >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+            AND CreateDate <= NOW()) AS Sub_Question ON C.MONTH = MONTH(CreateDate)
+GROUP BY C.MONTH
 ORDER BY C.MONTH ASC;
 END $$;
 DELIMITER ;
