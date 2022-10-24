@@ -269,3 +269,8 @@ FROM
         LEFT JOIN
     `account` A ON A.DepartmentID = D.DepartmentID
 GROUP BY D.DepartmentID;
+
+
+SELECT DepartmentName,Email from `department` D ,`account` A  where D.DepartmentID = A.DepartmentID;
+
+create view v_11 (d,y)  as select DepartmentID,Email from `account`;
