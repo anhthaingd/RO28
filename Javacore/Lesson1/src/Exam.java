@@ -9,7 +9,7 @@ public class Exam {
     CategoryQuestion[] categoryId;
     int duration;
     Account creatorId;
-    LocalDate createDate;
+    LocalDate createDate ;
     public  Question[] questionId;
 
     @Override

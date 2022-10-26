@@ -20,6 +20,3 @@ public class Question {
     }
 }
 
-public  class Main {
-    
-}
