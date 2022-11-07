@@ -25,5 +25,24 @@ public class Circle {
         this.radius = radius;
     }
 
-    
+    public String getColor() {
+        return this.color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getArea() {
+        return Math.PI*Math.pow(this.radius,2.0);
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "Radius: " + radius +
+                ", Color: " + color +
+                ", Area: " + getArea() +
+                "}";
+    }
 }

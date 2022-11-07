@@ -1,11 +1,14 @@
 package backend;
 
+import entity.Circle;
 import entity.Student;
+
+import javax.crypto.Cipher;
 
 public class Exercise4 {
     public static void all() {
         question1();
-
+        question2();
     }
 
     public static void question1() {
@@ -19,5 +22,10 @@ public class Exercise4 {
         System.out.println(st2);
     }
 
+    public static void question2() {
+        System.out.println("--------Demo Circle-----------");
+        Circle circle = new Circle(3,"blue");
+        System.out.println("Dien tich hinh tron la: " + circle.getArea());
+    }
 
 }
