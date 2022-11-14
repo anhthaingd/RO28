@@ -57,6 +57,6 @@ public class FileManager {
         if (!isFileExists(sourceFile)) {
             throw new Exception(FILE_NOT_EXISTS);
         }
-        
+
     }
 }
