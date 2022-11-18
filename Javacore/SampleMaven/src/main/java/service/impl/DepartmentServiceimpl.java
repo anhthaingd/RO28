@@ -21,4 +21,18 @@ public class DepartmentServiceimpl implements DepartmentService {
         departments = departmentRepository.getListDepartment();
         return departments;
     }
+    @Override
+    public void createDepartment(Department request) throws SQLException {
+        int result = departmentRepository.createDepartment(request);
+        if (result > 0) {
+            System.out.println("Them du lieu thanh cong");
+        } else {
+            System.out.println("Them du lieu that bai");
+        }
+    }
+
+    @Override
+    public void getDepartmentById() throws SQLException{
+
+    }
 }

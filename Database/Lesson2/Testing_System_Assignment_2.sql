@@ -106,7 +106,6 @@ INSERT INTO `Department` VALUES
     (11,'Waiting Department');
 INSERT INTO `Position` (PositionName) VALUES
 	('Dev'), 
-    ('Test'),
     ('Scrum Master'),
     ('PM');
     

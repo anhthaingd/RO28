@@ -21,4 +21,12 @@ public class DepartmentController {
         }
         return departments;
     }
+
+    public void createDepartment(Department request) {
+        try {
+            departmentService.createDepartment(request);
+        } catch (Exception e) {
+            System.out.println("Tao moi phong ban khong thanh cong"+ e.getMessage());
+        }
+    }
 }
